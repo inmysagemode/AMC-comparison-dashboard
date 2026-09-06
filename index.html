@@ -106,12 +106,12 @@
 
 <div class="row row-kpi">
   <div class="card">
-    <div class="title">Combined Revenue (FY26)</div>
-    <div class="kpi-value" id="kpiRev"></div>
+    <div class="title">Revenue (FY26)</div>
+    <div class="kpi-value" style="font-size:20px"><span id="kpiRevH" style="color:var(--teal)"></span> &middot; <span id="kpiRevN" style="color:var(--coral)"></span></div>
   </div>
   <div class="card">
-    <div class="title">Combined Closing AUM (FY26)</div>
-    <div class="kpi-value" id="kpiAum"></div>
+    <div class="title">Closing AUM (FY26)</div>
+    <div class="kpi-value" style="font-size:20px"><span id="kpiAumH" style="color:var(--teal)"></span> &middot; <span id="kpiAumN" style="color:var(--coral)"></span></div>
   </div>
   <div class="card">
     <div class="title">3-Year Revenue CAGR</div>
@@ -188,8 +188,10 @@ function fmtCrShort(v){
 function pct(v, d=0){ return (v*100).toFixed(d) + "%"; }
 
 // KPI values
-document.getElementById("kpiRev").textContent = fmtCrShort(DATA.combined_rev_fy26);
-document.getElementById("kpiAum").textContent = fmtCrShort(DATA.combined_aum_fy26);
+document.getElementById("kpiRevH").textContent = "HDFC " + fmtCrShort(DATA.hdfc.raw["Total Revenue / Total Income"][4]);
+document.getElementById("kpiRevN").textContent = "NAM " + fmtCrShort(DATA.nam.raw["Total Revenue / Total Income"][4]);
+document.getElementById("kpiAumH").textContent = "HDFC " + fmtCrShort(DATA.hdfc.raw["Closing AUM (Year End)"][4]);
+document.getElementById("kpiAumN").textContent = "NAM " + fmtCrShort(DATA.nam.raw["Closing AUM (Year End)"][4]);
 document.getElementById("kpiRevCagr").innerHTML =
   `<span style="color:${TEAL}">${pct(DATA.rev_cagr.hdfc,1)}</span> <span style="font-size:14px;color:#8993A4">/</span> <span style="color:${CORAL}">${pct(DATA.rev_cagr.nam,1)}</span>`;
 document.getElementById("epsHdfc").textContent = "HDFC " + pct(DATA.eps_cagr.hdfc, 1);
