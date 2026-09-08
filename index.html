@@ -68,29 +68,51 @@
         .al-label { font-size: 11px; color: #7f8c8d; font-weight: 600; text-transform: uppercase;}
 
         /* COMPARISON INFOGRAPHIC VIEW */
-        .compare-infographic { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding-bottom: 40px; }
-        .ratio-card { background: white; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; overflow: hidden; position: relative; border: 1px solid #eee; transition: transform 0.2s;}
-        .ratio-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-        .ratio-header { padding: 15px 20px; background: #2c3e50; color: white; display: flex; justify-content: space-between; align-items: center;}
-        .ratio-title { font-size: 14px; font-weight: 700; margin: 0;}
-        .winner-badge { font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 12px; background: #f1c40f; color: #2c3e50; text-transform: uppercase;}
+        .compare-layout { display: flex; flex-direction: column; gap: 30px; padding-bottom: 40px; }
         
-        .ratio-body { padding: 20px; display: flex; flex-direction: column; gap: 15px; flex: 1;}
-        .ratio-meaning { font-size: 12px; color: #7f8c8d; font-style: italic; background: #f8f9fa; padding: 10px; border-radius: 6px; border-left: 3px solid #3498db; line-height: 1.4;}
+        /* 5-Year Trends Grid */
+        .trend-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px;}
+        .trend-card { background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); padding: 15px; display: flex; flex-direction: column;}
+        .trend-title { font-size: 12px; font-weight: 700; color: #34495e; text-transform: uppercase; text-align: center; margin-bottom: 10px;}
+        .trend-chart-container { height: 130px; position: relative; }
+
+        /* Insight Cards */
+        .insights-section { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .insight-card { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; border-radius: 12px; padding: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        .insight-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: #1abc9c; display: flex; align-items: center; gap: 8px;}
+        .insight-text { font-size: 13px; line-height: 1.5; color: #ecf0f1; }
         
-        .ratio-chart-container { height: 160px; position: relative; margin: 10px 0;}
-        
-        .ratio-takeaway { font-size: 13px; color: #34495e; font-weight: 600; line-height: 1.5; margin-top: auto;}
+        /* Summary Table */
+        .summary-table-wrapper { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid #eee; }
+        .summary-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .summary-table th { background: #34495e; color: white; padding: 15px; text-align: center; font-weight: 600; }
+        .summary-table th:first-child { text-align: left; }
+        .summary-table td { padding: 12px 15px; text-align: center; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-weight: 600; }
+        .summary-table td:first-child { text-align: left; color: #7f8c8d; font-weight: 700; }
+        .summary-table tr:hover td { background-color: #f9f9f9; }
+        .winner-cell { background-color: rgba(26, 188, 156, 0.1); color: #16a085 !important; }
+        .tie-cell { background-color: rgba(241, 196, 15, 0.1); color: #d35400 !important; }
+
+        /* Recommendations & Methodology */
+        .bottom-section { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .rec-panel { background: white; border-radius: 10px; padding: 25px; border-top: 5px solid #e67e22; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .meth-panel { background: white; border-radius: 10px; padding: 25px; border-top: 5px solid #9b59b6; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .sec-title { font-size: 18px; font-weight: 800; color: #2c3e50; margin-bottom: 15px; }
+        .rec-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid #e67e22;}
+        .rec-title { font-size: 14px; font-weight: 700; color: #34495e; margin-bottom: 4px; }
+        .rec-desc { font-size: 13px; color: #7f8c8d; line-height: 1.5; }
+        .meth-item { margin-bottom: 12px; font-size: 12px; line-height: 1.4; color: #7f8c8d; }
+        .meth-item strong { color: #34495e; }
 
         /* TABLES */
         .table-container { background: white; flex: 1; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-radius: 10px; overflow: auto; }
-        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
-        th { background-color: #34495e; color: white; padding: 15px; text-align: right; font-weight: 600; position: sticky; top: 0; z-index: 2;}
-        th:first-child { text-align: left; border-top-left-radius: 8px; }
-        th:last-child { border-top-right-radius: 8px; }
-        td { padding: 14px 15px; text-align: right; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-weight: 500;}
-        td:first-child { text-align: left; font-weight: 700; color: #34495e; }
-        tr:hover td { background-color: #f4f7f6; }
+        table.fin-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+        .fin-table th { background-color: #34495e; color: white; padding: 15px; text-align: right; font-weight: 600; position: sticky; top: 0; z-index: 2;}
+        .fin-table th:first-child { text-align: left; border-top-left-radius: 8px; }
+        .fin-table th:last-child { border-top-right-radius: 8px; }
+        .fin-table td { padding: 14px 15px; text-align: right; border-bottom: 1px solid #f0f0f0; color: #2c3e50; font-weight: 500;}
+        .fin-table td:first-child { text-align: left; font-weight: 700; color: #34495e; }
+        .fin-table tr:hover td { background-color: #f4f7f6; }
         
         .compare-group-header td { background-color: #ecf0f1; font-weight: 800; color: #2c3e50; text-align: left; padding: 15px; font-size: 15px; border-bottom: 2px solid #bdc3c7;}
         .compare-row td { background-color: #ffffff; border-bottom: none;}
@@ -108,7 +130,7 @@
     <div class="sidebar">
         
         <div class="filter-group">
-            <div class="filter-title">Benchmark / Company</div>
+            <div class="filter-title">Analysis View</div>
             <div class="toggle-wrap">
                 <div class="toggle-btn company-btn active" data-val="HDFC">HDFC AMC</div>
                 <div class="toggle-btn company-btn" data-val="NAM">NAM India</div>
@@ -173,14 +195,100 @@
         </div>
 
         <!-- OVERVIEW (COMPARE INFOGRAPHIC) -->
-        <div id="view-overview-compare" style="display: none; flex-direction: column; gap: 20px;">
-            <div class="compare-infographic" id="compare-infographic-container">
-                <!-- Ratio cards injected here via JS -->
+        <div id="view-overview-compare" style="display: none;" class="compare-layout">
+            
+            <!-- 5-Year Trends -->
+            <div class="trend-grid">
+                <div class="trend-card"><div class="trend-title">Closing AUM</div><div class="trend-chart-container"><canvas id="tc-aum"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">Headcount</div><div class="trend-chart-container"><canvas id="tc-emp"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">AUM per Employee</div><div class="trend-chart-container"><canvas id="tc-aumpe"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">Revenue</div><div class="trend-chart-container"><canvas id="tc-rev"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">Net Profit (PAT)</div><div class="trend-chart-container"><canvas id="tc-pat"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">ROCE</div><div class="trend-chart-container"><canvas id="tc-roce"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">Net Profit Margin</div><div class="trend-chart-container"><canvas id="tc-margin"></canvas></div></div>
+                <div class="trend-card"><div class="trend-title">Fee Rate</div><div class="trend-chart-container"><canvas id="tc-fee"></canvas></div></div>
             </div>
+
+            <!-- What the Numbers Tell Us -->
+            <div class="insights-section">
+                <div class="insight-card">
+                    <div class="insight-title">📊 Profitability & Margins</div>
+                    <div class="insight-text">
+                        <b>HDFC AMC</b> leads in Net Profit Margins (~62% vs ~55%), demonstrating strong cost discipline against industry-wide fee pressure. However, <b>NAM India</b> has seen excellent margin expansion since FY23, closing the historic profitability gap.
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">⚡ Operating Efficiency</div>
+                    <div class="insight-text">
+                        <b>NAM India</b> significantly outpaced HDFC in workforce productivity. Its AUM per employee nearly doubled (358→677 Cr), allowing for tremendous operating leverage compared to HDFC's more modest scaling (343→493 Cr).
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-title">📈 Growth Quality</div>
+                    <div class="insight-text">
+                        Revenue grew at a nearly identical CAGR (HDFC 23%, NAM 24%). However, HDFC experienced an EPS dilution (~0% CAGR) due to bonus share issuance despite underlying PAT growing over 100%. NAM's EPS (27% CAGR) cleanly tracked its earnings growth.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Comparison Table -->
+            <div class="summary-table-wrapper">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Key Metric Dimension</th>
+                            <th>HDFC AMC (FY26)</th>
+                            <th>NAM India (FY26)</th>
+                            <th>Strategic Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>AUM Scale</td><td>₹8.44L Cr</td><td>₹7.73L Cr</td><td class="winner-cell">HDFC AMC</td></tr>
+                        <tr><td>Revenue Scale</td><td>₹4,617 Cr</td><td>₹2,742 Cr</td><td class="winner-cell">HDFC AMC</td></tr>
+                        <tr><td>Revenue Growth (3Y CAGR)</td><td>23.0%</td><td>24.2%</td><td class="winner-cell">NAM India</td></tr>
+                        <tr><td>Net Profit Margin</td><td>61.9%</td><td>54.6%</td><td class="winner-cell">HDFC AMC</td></tr>
+                        <tr><td>ROCE</td><td>33.2%</td><td>37.9%</td><td class="winner-cell">NAM India</td></tr>
+                        <tr><td>Fee Rate (Yield)</td><td>46.1 bps</td><td>34.2 bps</td><td class="winner-cell">HDFC AMC</td></tr>
+                        <tr><td>AUM per Employee</td><td>₹493 Cr</td><td>₹677 Cr</td><td class="winner-cell">NAM India</td></tr>
+                        <tr><td>Cash Conversion (OCF/PAT)</td><td>0.88x</td><td>0.95x</td><td class="winner-cell">NAM India</td></tr>
+                        <tr><td>Debt-to-Equity</td><td>0.08x</td><td>0.10x</td><td class="tie-cell">Tie (Extremely Low)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recommendations & Methodology -->
+            <div class="bottom-section">
+                <div class="rec-panel">
+                    <div class="sec-title">Managerial Recommendations</div>
+                    <div class="rec-item">
+                        <div class="rec-title">1. Productive Deployment of Excess Liquidity</div>
+                        <div class="rec-desc">Both AMCs hold zero structural debt and massive liquidity buffers (Quick Ratios > 13x; HDFC > 30x). Management should evaluate returning excess capital via dividends/buybacks or leveraging it for strategic technological investments (e.g., AI integration, digital platforms) to prevent return-on-equity drag.</div>
+                    </div>
+                    <div class="rec-item">
+                        <div class="rec-title">2. Protecting Fee Economics While Scaling</div>
+                        <div class="rec-desc">As AUM scales, fee rates are naturally compressing (HDFC fell from 48.5 to 46.1 bps; NAM from 41.1 to 34.2 bps) due to passive fund flows. Management must prioritize higher-margin active equity and hybrid products to defend overall yields while passively capturing SIP volume growth.</div>
+                    </div>
+                    <div class="rec-item">
+                        <div class="rec-title">3. Maintaining Operating Productivity</div>
+                        <div class="rec-desc">While HDFC AMC remains the definitive margin leader, NAM has demonstrated a superior operating leverage model by aggressively expanding its AUM per employee. HDFC should scrutinize workforce productivity initiatives to ensure headcount growth does not outpace asset gathering.</div>
+                    </div>
+                </div>
+                
+                <div class="meth-panel">
+                    <div class="sec-title">Why These Measures?</div>
+                    <div class="meth-item"><strong>ROCE & Margins:</strong> In asset-light AMC models, ROCE demonstrates how effectively management generates operating profits from retained capital. Margins reveal pricing power against passive-fund pressures.</div>
+                    <div class="meth-item"><strong>Fee Rate:</strong> The core driver of unit economics. Tracking fee yields highlights if AUM growth translates into revenue or is diluted by cheaper index funds.</div>
+                    <div class="meth-item"><strong>AUM / Employee:</strong> The ultimate measure of scalability. High figures show the AMC can absorb massive inflows without linear headcount overhead.</div>
+                    <div class="meth-item"><strong>Cash Flow (OCF, FCF):</strong> AMCs are cash engines. OCF/Net Income checks earnings quality, showing how much profit is truly liquid free cash.</div>
+                    <div class="meth-item"><strong>EPS CAGR:</strong> Tracks actual per-share value creation, separating underlying operating performance from capital restructuring (like HDFC's bonus dilution).</div>
+                </div>
+            </div>
+
         </div>
 
         <!-- TABLES -->
         <div id="view-table" class="table-container" style="display: none;">
+            <h2 id="table-title" style="margin-bottom: 25px; color: #2c3e50; font-weight: 700;"></h2>
             <div id="table-content"></div>
         </div>
 
@@ -188,8 +296,7 @@
 </div>
 
 <script>
-    const fullData = {"HDFC": {"income": {"Total Revenue / Total Income": [2433.2, 2482.57, 3162.43, 4058.26, 4617.26], "Fee Income (Investment Management Fees)": [2103.24, 2160.79, 2580.6, 3481.91, 4103.15], "EBIT (Operating Profit)": [1537.0, 1555.0, 1900.13, 2726.21, 3211.45], "EBITDA": [1590.85, 1608.34, 1952.39, 2784.62, 3284.15], "Net Profit After Tax (PAT)": [1393.13, 1423.92, 1945.88, 2461.05, 2859.36], "Diluted EPS": [65.31, 66.73, 91.04, 114.79, 66.53]}, "bs": {"Total Assets": [5880.37, 6536.53, 7557.55, 8753.63, 9988.39], "Current Liabilities": [178.98, 220.72, 260.92, 278.5, 311.28], "Total Liabilities": [350.33, 428.12, 478.48, 619.49, 757.3], "Shareholders' Equity": [5530.04, 6108.41, 7079.07, 8134.14, 9231.09], "Cash & Cash Equivalents": [1.87, 3.12, 10.21, 11.58, 10.97], "Other Marketable Investments": [5570.23, 6079.16, 7190.03, 8288.87, 9396.23], "Trade Receivables": [74.53, 183.74, 93.27, 133.18, 158.2]}, "ratios": {"ROCE (EBIT / Capital Employed)": [0.269583382298001, 0.24620753315885058, 0.260411998415707, 0.3216717619670731, 0.33186044180545643], "Net Profit Margin (PAT / Revenue)": [0.5725505507151077, 0.5735669084859641, 0.6153116432616691, 0.6064298492457358, 0.6192763673693923], "Fee Rate (Fee Income / Avg AUM)": [0.004847746276477532, 0.004954508332247638, 0.004746276345181086, 0.004654520451558437, 0.004607426623967276], "Quick Ratio": [31.54894401609118, 28.388999637549833, 27.95305074352292, 30.282333931777384, 30.729246980210743], "Debt-to-Equity (Total Liab / Equity)": [0.06335035551279918, 0.07008697844447245, 0.06759079935641264, 0.07615924977932516, 0.08203798251344098], "OCF / Net Income": [0.8999375506951971, 0.8071520871959098, 0.8325333525191686, 0.8438268218849677, 0.8848448603883386], "FCF / EBITDA  (FCF = OCF - CapEx)": [0.7816576044253073, 0.7058333436959847, 0.8202510768852534, 0.7297010004955793, 0.7635126288385123], "AUM per Employee (\u20b9 Cr)": [343.34709351305816, 340.9024199843872, 402.47978793903246, 466.28739184178, 492.70286047869234]}}, "NAM": {"income": {"Total Revenue / Total Income": [1428.42, 1431.18, 1877.08, 2348.28, 2742.11], "Fee Income (Investment Management Fees)": [1164.82, 1218.97, 1479.26, 2017.2, 2478.37], "EBIT (Operating Profit)": [760.0, 761.0, 958.0, 1404.0, 1748.0], "EBITDA": [786.73, 790.08, 986.38, 1433.44, 1785.59], "Net Profit After Tax (PAT)": [711.21, 714.94, 1047.23, 1252.23, 1497.75], "Diluted EPS": [11.28, 11.4, 16.58, 19.49, 23.13]}, "bs": {"Total Assets": [3644.16, 3697.56, 4158.53, 4415.6, 4884.95], "Current Liabilities": [239.06, 196.62, 219.39, 250.9, 267.65], "Total Liabilities": [276.09, 286.05, 340.21, 401.44, 461.76], "Shareholders' Equity": [3368.07, 3411.51, 3818.32, 4014.16, 4423.19], "Cash & Cash Equivalents": [4.45, 1.25, 13.4, 8.43, 4.15], "Other Marketable Investments": [2877.78, 2934.78, 3353.85, 3122.65, 3562.3], "Trade Receivables": [65.86, 86.79, 115.56, 45.28, 61.34]}, "ratios": {"ROCE (EBIT / Capital Employed)": [0.22319461983495345, 0.21737019200557564, 0.243200292449621, 0.337119120224746, 0.3785762242002902], "Net Profit Margin (PAT / Revenue)": [0.4978997773764019, 0.4995458293156696, 0.5579037654228909, 0.5332541264244468, 0.5462034710496662], "Fee Rate (Fee Income / Avg AUM)": [0.004112179226932052, 0.004158050750616559, 0.0034297068452242944, 0.0036202505747497753, 0.0034186064154821264], "Quick Ratio": [12.332008700744584, 15.37391923507273, 15.874971511919414, 12.659864487843763, 13.554231272183825], "Debt-to-Equity (Total Liab / Equity)": [0.08197276184877392, 0.08384850110361687, 0.08909939449810386, 0.10000597883492438, 0.10439524415636679], "OCF / Net Income": [0.7883606810927856, 0.8283492321033933, 0.7059862685369976, 0.921659758989962, 0.9486296110832916], "FCF / EBITDA  (FCF = OCF - CapEx)": [0.7041043305835548, 0.7370519441069259, 0.7377177152821429, 0.43032844067418247, 0.7521043464625139], "AUM per Employee (\u20b9 Cr)": [357.8076525336091, 360.4577954319762, 521.7410358565737, 592.4927536231884, 677.3038528896673]}}};
-    const infoData = [{"name": "ROCE (EBIT / Capital Employed)", "meaning": "Higher ROCE indicates better utilisation of capital and stronger returns.", "better": "NAM India", "reason": "NAM India closed a 1.5-pt gap and overtook HDFC by FY25(33.7% vs 32.2%)", "hdfc": [0.269583382298001, 0.24620753315885058, 0.260411998415707, 0.3216717619670731, 0.33186044180545643], "nam": [0.22319461983495345, 0.21737019200557564, 0.243200292449621, 0.337119120224746, 0.3785762242002902]}, {"name": "Net Profit Margin (PAT / Revenue)", "meaning": "Higher margin indicates stronger profitability and cost efficiency", "better": "HDFC AMC", "reason": "HDFC's margin lead held at ~7 pts despite industry-wide fee pressure.", "hdfc": [0.5725505507151077, 0.5735669084859641, 0.6153116432616691, 0.6064298492457358, 0.6192763673693923], "nam": [0.4978997773764019, 0.4995458293156696, 0.5579037654228909, 0.5332541264244468, 0.5462034710496662]}, {"name": "Fee Rate (Fee Income / Avg AUM)", "meaning": "Higher/stable fee rate indicates stronger fee-earning capacity and less fee compression.", "better": "HDFC AMC", "reason": "NAM India's AUM/employee nearly doubled (358\u2192677 Cr) vs. HDFC's 343\u2192493 Cr.", "hdfc": [0.004847746276477532, 0.004954508332247638, 0.004746276345181086, 0.004654520451558437, 0.004607426623967276], "nam": [0.004112179226932052, 0.004158050750616559, 0.0034297068452242944, 0.0036202505747497753, 0.0034186064154821264]}, {"name": "Debt-to-Equity (Total Liab / Equity)", "meaning": "Lower D/E indicates lower dependence on debt and financial risk.", "better": "HDFC AMC", "reason": "Both stay under 0.11x as asset-light AMCs simply don't need debt to fund growth, unlike lenders or manufacturers.", "hdfc": [0.06335035551279918, 0.07008697844447245, 0.06759079935641264, 0.07615924977932516, 0.08203798251344098], "nam": [0.08197276184877392, 0.08384850110361687, 0.08909939449810386, 0.10000597883492438, 0.10439524415636679]}, {"name": "OCF / Net Income", "meaning": "Higher ratio indicates stronger conversion of accounting profit into operating cash.", "better": "NAM India", "reason": "NAM's cash conversion jumped from 0.79 to 0.95, nearing full conversion, while HDFC held flat around 0.88-0.90 narrowing what was HDFC's cash-quality edge.", "hdfc": [0.8999375506951971, 0.8071520871959098, 0.8325333525191686, 0.8438268218849677, 0.8848448603883386], "nam": [0.7883606810927856, 0.8283492321033933, 0.7059862685369976, 0.921659758989962, 0.9486296110832916]}, {"name": "FCF / EBITDA  (FCF = OCF - CapEx)", "meaning": "Higher ratio indicates stronger conversion of operating earnings into free cash flow.", "better": "HDFC AMC", "reason": "NAM's FY25 figure had a sudden collapse to 0.43 (vs. its usual ~0.70-0.75) a one-off \u20b9537 Cr CapEx spike that year, so not a structural problem.", "hdfc": [0.7816576044253073, 0.7058333436959847, 0.8202510768852534, 0.7297010004955793, 0.7635126288385123], "nam": [0.7041043305835548, 0.7370519441069259, 0.7377177152821429, 0.43032844067418247, 0.7521043464625139]}, {"name": "AUM per Employee (Closing AUM/ Number of Employees)", "meaning": "Higher AUM per employee indicates greater workforce productivity and scalability.", "better": "NAM India", "reason": "NAM India's AUM/employee nearly doubled (358\u2192677 Cr) vs. HDFC's more modest 343\u2192493 Cr", "hdfc": [343.34709351305816, 340.9024199843872, 402.47978793903246, 466.28739184178, 492.70286047869234], "nam": [357.8076525336091, 360.4577954319762, 521.7410358565737, 592.4927536231884, 677.3038528896673]}, {"name": "Revenue CAGR (3-yr, FY23-FY26)", "meaning": "Higher CAGR indicates stronger revenue growth over the period.", "better": "NAM India", "reason": "Revenue grew at a near-identical annualized rate for both companies (23% vs. 24%) the small gap suggests this growth is largely industry-wide (rising AUM/SIP inflows across the sector) rather than a company-specific advantage", "hdfc": [null, null, null, null, 0.22978051931466115], "nam": [null, null, null, null, 0.24202461986242607]}, {"name": "EPS Growth (3-yr CAGR, FY23-FY26)", "meaning": "Higher EPS CAGR indicates stronger growth in earnings attributable to shareholders.", "better": "NAM India", "reason": "NAM India's EPS growth (27%) closely tracks its underlying profit growth, while HDFC AMC's ~0% is due to bonus share dilution, not a performance issue while,HDFC's actual PAT grew over 100% in the same period.", "hdfc": [null, null, null, null, -0.0010000506696011824], "nam": [null, null, null, null, 0.26597052350682904]}];
+    const fullData = {"HDFC": {"income": {"Total Revenue / Total Income": [2433.2, 2482.57, 3162.43, 4058.26, 4617.26], "Fee Income (Investment Management Fees)": [2103.24, 2160.79, 2580.6, 3481.91, 4103.15], "EBIT (Operating Profit)": [1537.0, 1555.0, 1900.13, 2726.21, 3211.45], "EBITDA": [1590.85, 1608.34, 1952.39, 2784.62, 3284.15], "Net Profit After Tax (PAT)": [1393.13, 1423.92, 1945.88, 2461.05, 2859.36], "Diluted EPS": [65.31, 66.73, 91.04, 114.79, 66.53]}, "bs": {"Total Assets": [5880.37, 6536.53, 7557.55, 8753.63, 9988.39], "Current Liabilities": [178.98, 220.72, 260.92, 278.5, 311.28], "Total Liabilities": [350.33, 428.12, 478.48, 619.49, 757.3], "Shareholders' Equity": [5530.04, 6108.41, 7079.07, 8134.14, 9231.09], "Cash & Cash Equivalents": [1.87, 3.12, 10.21, 11.58, 10.97], "Other Marketable Investments": [5570.23, 6079.16, 7190.03, 8288.87, 9396.23], "Trade Receivables": [74.53, 183.74, 93.27, 133.18, 158.2]}, "ratios": {"ROCE (EBIT / Capital Employed)": [0.269583382298001, 0.24620753315885058, 0.260411998415707, 0.3216717619670731, 0.33186044180545643], "Net Profit Margin (PAT / Revenue)": [0.5725505507151077, 0.5735669084859641, 0.6153116432616691, 0.6064298492457358, 0.6192763673693923], "Fee Rate (Fee Income / Avg AUM)": [0.004847746276477532, 0.004954508332247638, 0.004746276345181086, 0.004654520451558437, 0.004607426623967276], "Quick Ratio": [31.54894401609118, 28.388999637549833, 27.95305074352292, 30.282333931777384, 30.729246980210743], "Debt-to-Equity (Total Liab / Equity)": [0.06335035551279918, 0.07008697844447245, 0.06759079935641264, 0.07615924977932516, 0.08203798251344098], "OCF / Net Income": [0.8999375506951971, 0.8071520871959098, 0.8325333525191686, 0.8438268218849677, 0.8848448603883386], "FCF / EBITDA  (FCF = OCF - CapEx)": [0.7816576044253073, 0.7058333436959847, 0.8202510768852534, 0.7297010004955793, 0.7635126288385123], "AUM per Employee (\u20b9 Cr)": [343.34709351305816, 340.9024199843872, 402.47978793903246, 466.28739184178, 492.70286047869234]}, "closing_aum": [407553, 436696, 607342, 754453, 844000], "employees": [1187, 1281, 1509, 1618, 1713]}, "NAM": {"income": {"Total Revenue / Total Income": [1428.42, 1431.18, 1877.08, 2348.28, 2742.11], "Fee Income (Investment Management Fees)": [1164.82, 1218.97, 1479.26, 2017.2, 2478.37], "EBIT (Operating Profit)": [760.0, 761.0, 958.0, 1404.0, 1748.0], "EBITDA": [786.73, 790.08, 986.38, 1433.44, 1785.59], "Net Profit After Tax (PAT)": [711.21, 714.94, 1047.23, 1252.23, 1497.75], "Diluted EPS": [11.28, 11.4, 16.58, 19.49, 23.13]}, "bs": {"Total Assets": [3644.16, 3697.56, 4158.53, 4415.6, 4884.95], "Current Liabilities": [239.06, 196.62, 219.39, 250.9, 267.65], "Total Liabilities": [276.09, 286.05, 340.21, 401.44, 461.76], "Shareholders' Equity": [3368.07, 3411.51, 3818.32, 4014.16, 4423.19], "Cash & Cash Equivalents": [4.45, 1.25, 13.4, 8.43, 4.15], "Other Marketable Investments": [2877.78, 2934.78, 3353.85, 3122.65, 3562.3], "Trade Receivables": [65.86, 86.79, 115.56, 45.28, 61.34]}, "ratios": {"ROCE (EBIT / Capital Employed)": [0.22319461983495345, 0.21737019200557564, 0.243200292449621, 0.337119120224746, 0.3785762242002902], "Net Profit Margin (PAT / Revenue)": [0.4978997773764019, 0.4995458293156696, 0.5579037654228909, 0.5332541264244468, 0.5462034710496662], "Fee Rate (Fee Income / Avg AUM)": [0.004112179226932052, 0.004158050750616559, 0.0034297068452242944, 0.0036202505747497753, 0.0034186064154821264], "Quick Ratio": [12.332008700744584, 15.37391923507273, 15.874971511919414, 12.659864487843763, 13.554231272183825], "Debt-to-Equity (Total Liab / Equity)": [0.08197276184877392, 0.08384850110361687, 0.08909939449810386, 0.10000597883492438, 0.10439524415636679], "OCF / Net Income": [0.7883606810927856, 0.8283492321033933, 0.7059862685369976, 0.921659758989962, 0.9486296110832916], "FCF / EBITDA  (FCF = OCF - CapEx)": [0.7041043305835548, 0.7370519441069259, 0.7377177152821429, 0.43032844067418247, 0.7521043464625139], "AUM per Employee (\u20b9 Cr)": [357.8076525336091, 360.4577954319762, 521.7410358565737, 592.4927536231884, 677.3038528896673]}, "closing_aum": [346000, 362981, 523828, 654112, 773481], "employees": [967, 1007, 1004, 1104, 1142]}};
     
     const incomeList = Object.keys(fullData.HDFC.income);
     const bsList = Object.keys(fullData.HDFC.bs);
@@ -202,37 +309,13 @@
     const colors = {
         HDFC: { main: '#e67e22', acc: '#e74c3c', name: 'HDFC AMC' },
         NAM: { main: '#9b59b6', acc: '#e74c3c', name: 'NAM India' },
-        COMPARE: { main: '#3498db', acc: '#e74c3c', name: 'Comparative Analysis' }
+        COMPARE: { main: '#3498db', acc: '#e74c3c', name: 'Comprehensive AMC Comparison' }
     };
     
     let chart1, chart2, chart4;
-    let compareCharts = [];
+    let trendCharts = {};
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Build Infographic Ratio Cards
-        const container = document.getElementById('compare-infographic-container');
-        infoData.forEach((ratio, i) => {
-            const card = document.createElement('div');
-            card.className = 'ratio-card';
-            
-            let winnerHtml = ratio.better && ratio.better !== 'nan' ? `<div class="winner-badge">WINNER: ${ratio.better}</div>` : '';
-            
-            card.innerHTML = `
-                <div class="ratio-header">
-                    <h3 class="ratio-title">${ratio.name}</h3>
-                    ${winnerHtml}
-                </div>
-                <div class="ratio-body">
-                    <div class="ratio-meaning">💡 <b>Meaning:</b> ${ratio.meaning}</div>
-                    <div class="ratio-chart-container">
-                        <canvas id="info-chart-${i}"></canvas>
-                    </div>
-                    <div class="ratio-takeaway">📈 <b>Takeaway:</b> ${ratio.reason}</div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-
         // Sidebar Entity Toggles
         document.querySelectorAll('.company-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -274,9 +357,9 @@
         document.getElementById('view-table').style.display = 'none';
         
         if (currentView === 'overview') {
-            title.innerText = currentEntity === 'COMPARE' ? 'Comprehensive Ratio Analysis' : colors[currentEntity].name + ' Executive Overview';
+            title.innerText = currentEntity === 'COMPARE' ? colors[currentEntity].name : colors[currentEntity].name + ' Executive Overview';
             if (currentEntity === 'COMPARE') {
-                document.getElementById('view-overview-compare').style.display = 'grid';
+                document.getElementById('view-overview-compare').style.display = 'flex';
                 updateCompareCharts();
             } else {
                 document.getElementById('view-overview-single').style.display = 'flex';
@@ -294,7 +377,7 @@
     }
     
     function renderTable(type) {
-        let html = '<table><thead><tr><th>Line Item</th>';
+        let html = '<table class="fin-table"><thead><tr><th>Line Item</th>';
         years.forEach(y => html += `<th>${y}</th>`);
         html += '</tr></thead><tbody>';
         
@@ -348,6 +431,30 @@
         chart1 = new Chart(document.getElementById('chart1').getContext('2d'), { type: 'bar', options: getComboOptions() });
         chart2 = new Chart(document.getElementById('chart2').getContext('2d'), { type: 'bar', options: getComboOptions() });
         chart4 = new Chart(document.getElementById('chart4').getContext('2d'), { type: 'bar', options: getFunnelOptions() });
+        
+        const trendConfigs = [
+            { id: 'tc-aum', dataH: fullData.HDFC.closing_aum, dataN: fullData.NAM.closing_aum, type: 'bar' },
+            { id: 'tc-emp', dataH: fullData.HDFC.employees, dataN: fullData.NAM.employees, type: 'line' },
+            { id: 'tc-aumpe', dataH: fullData.HDFC.ratios['AUM per Employee (₹ Cr)'], dataN: fullData.NAM.ratios['AUM per Employee (₹ Cr)'], type: 'line' },
+            { id: 'tc-rev', dataH: fullData.HDFC.income['Total Revenue / Total Income'], dataN: fullData.NAM.income['Total Revenue / Total Income'], type: 'bar' },
+            { id: 'tc-pat', dataH: fullData.HDFC.income['Net Profit After Tax (PAT)'], dataN: fullData.NAM.income['Net Profit After Tax (PAT)'], type: 'bar' },
+            { id: 'tc-roce', dataH: fullData.HDFC.ratios['ROCE (EBIT / Capital Employed)'].map(v=>v*100), dataN: fullData.NAM.ratios['ROCE (EBIT / Capital Employed)'].map(v=>v*100), type: 'line' },
+            { id: 'tc-margin', dataH: fullData.HDFC.ratios['Net Profit Margin (PAT / Revenue)'].map(v=>v*100), dataN: fullData.NAM.ratios['Net Profit Margin (PAT / Revenue)'].map(v=>v*100), type: 'line' },
+            { id: 'tc-fee', dataH: fullData.HDFC.ratios['Fee Rate (Fee Income / Avg AUM)'].map(v=>v*10000), dataN: fullData.NAM.ratios['Fee Rate (Fee Income / Avg AUM)'].map(v=>v*10000), type: 'line' } // converted to bps
+        ];
+
+        trendConfigs.forEach(conf => {
+            const ctx = document.getElementById(conf.id).getContext('2d');
+            trendCharts[conf.id] = new Chart(ctx, {
+                type: conf.type,
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+                    scales: { x: { display: false }, y: { display: false, beginAtZero: false } },
+                    interaction: { mode: 'nearest', axis: 'x', intersect: false }
+                }
+            });
+        });
     }
     
     function getComboOptions() {
@@ -440,57 +547,28 @@
     }
 
     function updateCompareCharts() {
-        infoData.forEach((ratio, i) => {
-            let hdfcData = ratio.hdfc;
-            let namData = ratio.nam;
-            
-            if (ratio.name.includes('%') || ratio.name.includes('Margin') || ratio.name.includes('ROCE') || ratio.name.includes('Rate') || ratio.name.includes('Growth') || ratio.name.includes('CAGR')) {
-                hdfcData = hdfcData.map(v => v !== null ? v * 100 : null);
-                namData = namData.map(v => v !== null ? v * 100 : null);
-            }
-            
-            const isSinglePoint = hdfcData[0] === null && hdfcData[1] === null && hdfcData[2] === null && hdfcData[3] === null;
+        const trendConfigs = [
+            { id: 'tc-aum', dataH: fullData.HDFC.closing_aum, dataN: fullData.NAM.closing_aum },
+            { id: 'tc-emp', dataH: fullData.HDFC.employees, dataN: fullData.NAM.employees },
+            { id: 'tc-aumpe', dataH: fullData.HDFC.ratios['AUM per Employee (₹ Cr)'], dataN: fullData.NAM.ratios['AUM per Employee (₹ Cr)'] },
+            { id: 'tc-rev', dataH: fullData.HDFC.income['Total Revenue / Total Income'], dataN: fullData.NAM.income['Total Revenue / Total Income'] },
+            { id: 'tc-pat', dataH: fullData.HDFC.income['Net Profit After Tax (PAT)'], dataN: fullData.NAM.income['Net Profit After Tax (PAT)'] },
+            { id: 'tc-roce', dataH: fullData.HDFC.ratios['ROCE (EBIT / Capital Employed)'].map(v=>v*100), dataN: fullData.NAM.ratios['ROCE (EBIT / Capital Employed)'].map(v=>v*100) },
+            { id: 'tc-margin', dataH: fullData.HDFC.ratios['Net Profit Margin (PAT / Revenue)'].map(v=>v*100), dataN: fullData.NAM.ratios['Net Profit Margin (PAT / Revenue)'].map(v=>v*100) },
+            { id: 'tc-fee', dataH: fullData.HDFC.ratios['Fee Rate (Fee Income / Avg AUM)'].map(v=>v*10000), dataN: fullData.NAM.ratios['Fee Rate (Fee Income / Avg AUM)'].map(v=>v*10000) }
+        ];
 
-            if (compareCharts[i]) {
-                compareCharts[i].destroy();
-            }
-
-            const ctx = document.getElementById('info-chart-' + i).getContext('2d');
-
-            if (isSinglePoint) {
-                compareCharts[i] = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['3-Year Period (FY23-FY26)'],
-                        datasets: [
-                            { label: 'HDFC AMC', data: [hdfcData[4]], backgroundColor: '#e67e22', borderRadius: 4, barPercentage: 0.6 },
-                            { label: 'NAM India', data: [namData[4]], backgroundColor: '#9b59b6', borderRadius: 4, barPercentage: 0.6 }
-                        ]
-                    },
-                    options: {
-                        responsive: true, maintainAspectRatio: false,
-                        plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: {size: 12, weight: '600'} } } },
-                        scales: { x: { grid: { display: false } }, y: { grid: { color: '#f0f0f0' }, beginAtZero: true } }
-                    }
-                });
-            } else {
-                compareCharts[i] = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: years,
-                        datasets: [
-                            { label: 'HDFC AMC', data: hdfcData, borderColor: '#e67e22', backgroundColor: 'rgba(230, 126, 34, 0.1)', tension: 0.4, borderWidth: 3, pointRadius: 4, fill: true },
-                            { label: 'NAM India', data: namData, borderColor: '#9b59b6', backgroundColor: 'rgba(155, 89, 182, 0.1)', tension: 0.4, borderWidth: 3, pointRadius: 4, fill: true }
-                        ]
-                    },
-                    options: {
-                        responsive: true, maintainAspectRatio: false,
-                        plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: {size: 12, weight: '600'} } }, tooltip: { mode: 'index', intersect: false } },
-                        scales: { x: { grid: { display: false } }, y: { grid: { color: '#f0f0f0' }, beginAtZero: false } },
-                        interaction: { mode: 'nearest', axis: 'x', intersect: false }
-                    }
-                });
-            }
+        trendConfigs.forEach(conf => {
+            const chart = trendCharts[conf.id];
+            const isBar = chart.config.type === 'bar';
+            chart.data = {
+                labels: years,
+                datasets: [
+                    { label: 'HDFC AMC', data: conf.dataH, borderColor: '#e67e22', backgroundColor: isBar ? '#e67e22' : 'transparent', tension: 0.3, borderWidth: isBar ? 0 : 3, pointRadius: isBar ? 0 : 3, borderRadius: 2 },
+                    { label: 'NAM India', data: conf.dataN, borderColor: '#9b59b6', backgroundColor: isBar ? '#9b59b6' : 'transparent', tension: 0.3, borderWidth: isBar ? 0 : 3, pointRadius: isBar ? 0 : 3, borderRadius: 2 }
+                ]
+            };
+            chart.update();
         });
     }
 
